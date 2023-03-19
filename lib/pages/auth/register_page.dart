@@ -1,6 +1,5 @@
 import 'dart:html';
 import 'dart:typed_data';
-
 import 'package:chatapp/helper/helper_function.dart';
 import 'package:chatapp/pages/auth/emaiverify.dart';
 import 'package:chatapp/pages/auth/login_page.dart';
@@ -77,6 +76,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
@@ -87,8 +87,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   color: Theme.of(context).primaryColor))
           : SingleChildScrollView(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
+                padding: EdgeInsets.symmetric(
+                  horizontal:
+                      screenWidth * 0.2, // 10% of screen width as padding
+                  vertical: 50,
+                ),
                 child: Form(
                   key: formKey,
                   child: Column(
@@ -96,18 +99,21 @@ class _RegisterPageState extends State<RegisterPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const Text(
-                        "Sakhi",
+                        "S A K H I",
                         style: TextStyle(
-                            fontSize: 40, fontWeight: FontWeight.bold),
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(159, 38, 27, 241)),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       const Text(
-                        "a friend in need is a friend in deed",
+                        "A Friend in need is a Friend in Deed",
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.w400),
                       ),
+                      SizedBox(height: 10.0),
                       // Image.asset('assets/pic1.jpg'), // LoginImage
                       TextFormField(
                         decoration: textInputDecoration.copyWith(
@@ -215,7 +221,11 @@ class _RegisterPageState extends State<RegisterPage> {
                                     decoration: TextDecoration.underline),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    nextScreen(context, const LoginPage());
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => LoginPage()),
+                                    );
                                   }),
                           ])),
                       SizedBox(height: 40.0),

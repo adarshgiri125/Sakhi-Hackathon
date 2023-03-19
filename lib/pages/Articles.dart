@@ -90,65 +90,68 @@ class Articles extends StatelessWidget {
             )),
           ),
           const SizedBox(height: 20),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(60.0, 15, 30, 5),
-                      child: CardWidget1(
-                        title: 'Equality before Law',
-                        content:
-                            'Article 14 embodies the general principles of equality before law and equal protection of laws. Prohibition from discrimination on grounds of religion, race, caste, sex or place of birth. Article 15(1) and (2) prohibits the state from discriminating against any citizen only on the basis of any one or more of the aspects such as religion, race, caste,'
-                            'sex, place of birth or any of them. Article 15(3) makes it possible for the state to create special provisions for protecting the interests of women and children. Article 15(4) capacitates the State to create special arrangements for promoting interests and welfare of socially and educationally backward classes of society.',
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(30.0, 15, 60, 5),
-                      child: CardWidget1(
-                        title: 'Equality of Opportunity ',
-                        content:
-                            'Article 16 provides for equality of opportunity for all citizens in matters relating to employment or appointment to any office under the State. Article 39 requires the State to'
-                            'direct its policy towards securing for men and women equally the right to an adequate means of livelihood [Article 39(a)] and equal pay for equal work for both men and women [Article 39(d)]. Article 39A directs the State to promote justice, on the basis of equal opportunity and to promote free legal aid by suitable legislation or scheme or in any other way to ensure that opportunities for securing justice are not denied to any citizen by reason of economic or other disabilities.',
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(60.0, 30, 30, 60),
-                      child: CardWidget1(
-                        title: 'Humane Conditions at Work',
-                        content:
-                            'Article 42 directs the State to make provision for securing justice and humane conditions of work and for maternity relief.'
-                            'sex, place of birth or any of them. Article 15(3) makes it possible for protecting the interests of women and children. Article 15(4) capacitates the State to create special arrangements for promoting interests and welfare of socially and educationally backward classes of society.',
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(30.0, 30, 60, 60),
-                      child: CardWidget1(
-                          title:
-                              'Reservation of seats for Women in Panchayats and Municipalities',
+          
+             Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(60.0, 15, 30, 5),
+                        child: CardWidget1(
+                          title: 'Equality before Law',
                           content:
-                              'Article 243 D (3) and Article 243 T(3) provide for reservation of not less than one third of total number of seats in Panchayats and Municipalities for women to be allotted by rotation to different Constituencies. Article 243 D(4) T(4) provides that not less than one third of the total number of officers of chairperson in the Panchayat and Municipalities at each level to be reserved for women'),
+                              'Article 14 embodies the general principles of equality before law and equal protection of laws. Prohibition from discrimination on grounds of religion, race, caste, sex or place of birth. Article 15(1) and (2) prohibits the state from discriminating against any citizen only on the basis of any one or more of the aspects such as religion, race, caste,'
+                              'sex, place of birth or any of them. Article 15(3) makes it possible for the state to create special provisions for protecting the interests of women and children. Article 15(4) capacitates the State to create special arrangements for promoting interests and welfare of socially and educationally backward classes of society.',
+                        ),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(30.0, 15, 60, 5),
+                        child: CardWidget1(
+                          title: 'Equality of Opportunity ',
+                          content:
+                              'Article 16 provides for equality of opportunity for all citizens in matters relating to employment or appointment to any office under the State. Article 39 requires the State to'
+                              'direct its policy towards securing for men and women equally the right to an adequate means of livelihood [Article 39(a)] and equal pay for equal work for both men and women [Article 39(d)]. Article 39A directs the State to promote justice, on the basis of equal opportunity and to promote free legal aid by suitable legislation or scheme or in any other way to ensure that opportunities for securing justice are not denied to any citizen by reason of economic or other disabilities.',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(60.0, 30, 30, 60),
+                        child: CardWidget1(
+                          title: 'Humane Conditions at Work',
+                          content:
+                              'Article 42 directs the State to make provision for securing justice and humane conditions of work and for maternity relief.'
+                              'sex, place of birth or any of them. Article 15(3) makes it possible for protecting the interests of women and children. Article 15(4) capacitates the State to create special arrangements for promoting interests and welfare of socially and educationally backward classes of society.',
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(30.0, 30, 60, 60),
+                        child: CardWidget1(
+                            title:
+                                'Reservation of seats for Women in Panchayats and Municipalities',
+                            content:
+                                'Article 243 D (3) and Article 243 T(3) provide for reservation of not less than one third of total number of seats in Panchayats and Municipalities for women to be allotted by rotation to different Constituencies. Article 243 D(4) T(4) provides that not less than one third of the total number of officers of chairperson in the Panchayat and Municipalities at each level to be reserved for women'),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          
         ],
       ),
+  
     );
   }
 }

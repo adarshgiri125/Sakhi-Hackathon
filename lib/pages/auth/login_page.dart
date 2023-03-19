@@ -30,13 +30,18 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth * 0.2, // 10% of screen width as padding
+            vertical: 50,
+          ),
           child: Form(
             key: formKey,
             child: Column(
@@ -44,8 +49,11 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
-                  "Sakhi",
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  " S A K H I ",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(159, 38, 27, 241)),
                 ),
                 const SizedBox(
                   height: 10,
@@ -54,6 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                   "Login now to see what they are talking!",
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
                 ),
+                const SizedBox(height: 10.0),
                 // Image.asset('assets/pic1.jpg'), // LoginImage
                 TextFormField(
                   decoration: textInputDecoration.copyWith(
@@ -168,7 +177,11 @@ class _LoginPageState extends State<LoginPage> {
                               decoration: TextDecoration.underline),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              nextScreen(context, const RegisterPage());
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RegisterPage()),
+                              );
                             }),
                     ]))
               ],

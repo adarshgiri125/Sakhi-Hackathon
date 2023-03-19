@@ -122,6 +122,15 @@ class _GroupListScreenState extends State<GroupListScreen> {
                 return ListTile(
                   title: Text(data['name'] ?? ''),
                   subtitle: Text(data['description'] ?? ''),
+                  trailing: IconButton(
+                    icon: Icon(Icons.delete),
+                    onPressed: () async {
+                      await _firestore
+                          .collection('groups')
+                          .doc(doc.id)
+                          .delete();
+                    },
+                  ),
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => ChatScreen(
