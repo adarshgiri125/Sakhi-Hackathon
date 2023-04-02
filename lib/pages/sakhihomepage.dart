@@ -100,6 +100,90 @@ void _showHelpDialog(BuildContext context) {
   );
 }
 
+class AppDrawer extends StatelessWidget {
+  const AppDrawer({Key? key}) : super(key: key);
+
+  Widget _buildButton(
+      BuildContext context, String text, VoidCallback onPressed) {
+    return ElevatedButton(
+      child: Text(
+        text,
+        style: TextStyle(color: Colors.black),
+      ),
+      onPressed: onPressed,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    drawer:
+    const AppDrawer();
+    return MediaQuery.of(context).size.width < 1500
+        ? Drawer(
+            child: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 6.0),
+              children: <Widget>[
+                DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 88, 148, 221),
+                  ),
+                  child: Text(
+                    'Sakhi',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16.0),
+                _buildButton(
+                  context,
+                  "Home",
+                  () => nextScreenReplace(context, sakhihomepage()),
+                ),
+                SizedBox(height: 16.0),
+                _buildButton(
+                  context,
+                  "Articles",
+                  () => nextScreenReplace(context, Articles()),
+                ),
+                SizedBox(height: 16.0),
+                _buildButton(
+                  context,
+                  "Courses",
+                  () => nextScreen(context, courses()),
+                ),
+                SizedBox(height: 16.0),
+                _buildButton(
+                  context,
+                  "Complaint Counter",
+                  () => nextScreenReplace(context, complaincounter()),
+                ),
+                SizedBox(height: 16.0),
+                _buildButton(
+                  context,
+                  "HelpLine",
+                  () => nextScreenReplace(context, helplinepage()),
+                ),
+                SizedBox(height: 16.0),
+                _buildButton(
+                  context,
+                  "Safety tips",
+                  () => nextScreenReplace(context, safetytipspage()),
+                ),
+                SizedBox(height: 16.0),
+                _buildButton(
+                  context,
+                  "News",
+                  () => nextScreenReplace(context, Newspage()),
+                ),
+              ],
+            ),
+          )
+        : Container();
+  }
+}
+
 class firstHomePage extends StatelessWidget {
   Widget _buildButton(BuildContext context, String text,
       {Color textColor = Colors.white, VoidCallback? onPressed}) {
@@ -117,7 +201,7 @@ class firstHomePage extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 88, 148, 221),
         title: Row(
           children: [
-            const Text("Sakhi", style: TextStyle(color: Colors.black)),
+            const Text("S A K H I", style: TextStyle(color: Colors.black)),
             const SizedBox(width: 657.0),
             Row(
               children: [
@@ -205,15 +289,20 @@ class firstHomePage extends StatelessWidget {
             MainAxisAlignment.center, // set the mainAxisAlignment to center
         children: [
           const SizedBox(height: 1.0),
-          const Text("Sakhi",
+          const Text("S A K H I",
               style: TextStyle(
-                  color: Colors.black,
+                  color: Color.fromARGB(159, 38, 27, 241),
                   fontWeight: FontWeight.w900,
                   fontSize: 38)),
           const SizedBox(height: 32.0),
           const SizedBox(height: 8.0),
-          const Text("We won't be sharing your private information.",
-              style: TextStyle(color: Colors.black, fontSize: 24)),
+          const Center(
+            child: Text(
+              "We won't be sharing your private information.",
+              style: TextStyle(color: Colors.black, fontSize: 24),
+              textAlign: TextAlign.center,
+            ),
+          ),
           const SizedBox(height: 32.0),
           ElevatedButton(
             child: const Text(

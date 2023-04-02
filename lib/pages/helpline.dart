@@ -61,102 +61,90 @@ class HelplineScreen extends StatelessWidget {
         title: Row(
           children: [
             const Text("Sakhi", style: TextStyle(color: Colors.black)),
-            const SizedBox(width: 657.0),
-            Row(
-              children: [
-                _buildButton(context, "Home", textColor: Colors.black,
-                    onPressed: () {
-                  nextScreenReplace(context, sakhihomepage());
-                }),
-                const SizedBox(width: 8.0),
-                _buildButton(context, "Articles", textColor: Colors.black,
-                    onPressed: () {
-                  nextScreenReplace(context, Articles());
-                }),
-                const SizedBox(width: 8.0),
-                _buildButton(context, "Courses", textColor: Colors.black,
-                    onPressed: () {
-                  {
-                    nextScreenReplace(context, courses());
-                  }
-                }),
-                const SizedBox(width: 8.0),
-                _buildButton(context, "Complaint Counter",
-                    textColor: Colors.black, onPressed: () {
-                  nextScreenReplace(context, complaincounter());
-                }),
-                SizedBox(
-                  width: 8.0,
-                ),
-                _buildButton(context, "HelpLine", textColor: Colors.black,
-                    onPressed: () {
-                  nextScreenReplace(context, helplinepage());
-                }),
-                const SizedBox(width: 8.0),
-                _buildButton(context, "Safety tips", textColor: Colors.black,
-                    onPressed: () {
-                  nextScreenReplace(
-                    context,
-                    safetytipspage(),
+            Spacer(),
+            _buildButton(context, "Home", textColor: Colors.black, onPressed: () {
+              nextScreenReplace(context, sakhihomepage());
+            }),
+            const SizedBox(width: 8.0),
+            _buildButton(context, "Articles", textColor: Colors.black, onPressed: () {
+              nextScreenReplace(context, Articles());
+            }),
+            const SizedBox(width: 8.0),
+            _buildButton(context, "Courses", textColor: Colors.black, onPressed: () {
+              nextScreenReplace(context, courses());
+            }),
+            const SizedBox(width: 8.0),
+            _buildButton(context, "Complaint Counter", textColor: Colors.black, onPressed: () {
+              nextScreenReplace(context, complaincounter());
+            }),
+            const SizedBox(width: 8.0),
+            _buildButton(context, "HelpLine", textColor: Colors.black, onPressed: () {
+              nextScreenReplace(context, helplinepage());
+            }),
+            const SizedBox(width: 8.0),
+            _buildButton(context, "Safety Tips", textColor: Colors.black, onPressed: () {
+              nextScreenReplace(context, safetytipspage());
+            }),
+            const SizedBox(width: 8.0),
+            _buildButton(context, "News", textColor: Colors.black, onPressed: () {
+              nextScreenReplace(context, Newspage());
+            }),
+          ],
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(height: 16.0),
+            Text(
+              'Helpline Numbers',
+              style: TextStyle(
+                fontSize: 35.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 32.0),
+            Expanded(
+              child: ListView.builder(
+                itemCount: helplines.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final helpline = helplines[index];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          helpline['name']!,
+                          style: TextStyle(
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(width: 16.0),
+                        Text(
+                          helpline['number']!,
+                          style: TextStyle(
+                            fontSize: 22.0,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
                   );
-                }),
-                SizedBox(
-                  width: 8.0,
-                ),
-                _buildButton(context, "News", textColor: Colors.black,
-                    onPressed: () {
-                  nextScreenReplace(context, Newspage());
-                }),
-              ],
+                },
+              ),
             ),
           ],
         ),
       ),
-      body: Center(
-        child: ListView.builder(
-          itemCount: helplines.length + 1,
-          itemBuilder: (BuildContext context, int index) {
-            if (index == 0) {
-              // return the heading
-              return Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
-                child: Center(
-                  child: Text(
-                    'Helpline number',
-                    style: TextStyle(
-                      fontSize: 35.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              );
-            } else {
-              // return a row with the name and number
-              final helpline = helplines[index - 1];
-              return ListTile(
-                title: Center(
-                  child: Text(
-                    helpline['name']!,
-                    style: TextStyle(
-                      fontSize: 22.0,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-                subtitle: Center(
-                  child: Text(
-                    helpline['number']!,
-                    style: TextStyle(
-                      fontSize: 22.0,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-              );
-            }
-          },
-        ),
-      ),
     );
+
   }
 }
